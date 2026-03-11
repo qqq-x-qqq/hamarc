@@ -1,5 +1,7 @@
 #include "hamming.h"
 
+#include <cstdint>
+
 namespace hamarc
 {
 
@@ -36,7 +38,7 @@ std::uint16_t EncodeByte(unsigned char value)
     }
 
     return code;
-}
+}  // namespace hamarc
 
 unsigned char DecodeByte(std::uint16_t code)
 {

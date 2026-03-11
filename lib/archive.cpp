@@ -1,9 +1,12 @@
 #include "archive.h"
 #include "hamming.h"
 
+#include <cstddef>
 #include <cstdint>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 namespace fs = std::filesystem;
 
@@ -16,7 +19,7 @@ static void PushUint32(std::vector<unsigned char>& out, std::uint32_t value)
     {
         out.push_back((value >> (i * 8)) & 0xFF);
     }
-}
+}  // namespace hamarc
 
 static void PushUint64(std::vector<unsigned char>& out, std::uint64_t value)
 {

@@ -28,4 +28,4 @@ void DeleteFiles(std::vector<FileData>& files, const std::vector<std::string>& n
 bool ConcatenateArchives(const std::vector<std::string>& archives, std::vector<FileData>& result);
 bool HasName(const std::vector<std::string>& names, const std::string& name);
 
-}
+}  // namespace hamarc
