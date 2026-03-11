@@ -1,14 +1,20 @@
-include(FetchContent)
+set(LOCAL_GTEST_DIR "${CMAKE_SOURCE_DIR}/../labwork3-qqq-x-qqq/build/_deps/googletest-src")
 
-FetchContent_Declare(
-    googletest
-    URL https://github.com/google/googletest/releases/download/v1.16.0/googletest-1.16.0.tar.gz
-    DOWNLOAD_EXTRACT_TIMESTAMP ON
-    FIND_PACKAGE_ARGS NAMES GTest
-)
+if (EXISTS "${LOCAL_GTEST_DIR}/CMakeLists.txt")
+    add_subdirectory("${LOCAL_GTEST_DIR}" "${CMAKE_BINARY_DIR}/local-googletest")
+else()
+    include(FetchContent)
 
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
+    FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/releases/download/v1.16.0/googletest-1.16.0.tar.gz
+        DOWNLOAD_EXTRACT_TIMESTAMP ON
+        FIND_PACKAGE_ARGS NAMES GTest
+    )
+
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    FetchContent_MakeAvailable(googletest)
+endif()
 
 add_executable(
     hamarc_tests
