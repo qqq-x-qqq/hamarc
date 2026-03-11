@@ -1,8 +1,8 @@
 #include <filesystem>
 #include <vector>
 
-#include <labwork3-qqq-x-qqq/lib/argparser.h>
-#include <labwork4-qqq-x-qqq/lib/archive.h>
+#include <lib/argparser.h>
+#include <lib/archive.h>
 
 namespace fs = std::filesystem;
 

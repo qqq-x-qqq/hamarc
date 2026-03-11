@@ -1,6 +1,7 @@
 add_library(
     hamarc_lib
     archive.cpp
+    argparser.cpp
     hamming.cpp
 )
 
